@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Database</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    /* Main Card */
+    .card {
+      width: 100%;
+      max-width: 1000px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Content */
+    .content {
+      padding: 30px;
+    }
+
+    /* Form Section */
+    .form-section {
+      background: #f9fbff;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    form input {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    form input:focus {
+      outline: none;
+      border-color: #4facfe;
+      box-shadow: 0 0 5px rgba(79,172,254,0.4);
+    }
+
+    form button {
+      grid-column: span 3;
+      padding: 14px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(79,172,254,0.5);
+    }
+
+    /* Table Section */
+    .table-section {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .table-section h2 {
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    table thead {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+    }
+
+    table th,
+    table td {
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    table tbody tr {
+      border-bottom: 1px solid #eee;
+      transition: 0.3s;
+    }
+
+    table tbody tr:hover {
+      background: #f0f7ff;
+      transform: scale(1.01);
+    }
+
+    table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      form {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      form button {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      form button {
+        grid-column: span 1;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Dravidian university</h1>
+      <p>Student Database</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Form Section -->
+      <div class="form-section">
+        <h2>Add New Student</h2>
+
+        <form>
+          <input type="text" placeholder="Student ID" required>
+          <input type="text" placeholder="Full Name" required>
+          <input type="number" placeholder="Age" required>
+          <input type="text" placeholder="Class" required>
+          <input type="email" placeholder="Email" required>
+          <input type="tel" placeholder="Phone" required>
+
+          <button type="submit">Add Student</button>
+        </form>
+      </div>
+
+      <!-- Table Section -->
+      <div class="table-section">
+        <h2>Student Records</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Class</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>ravi</td>
+              <td>23</td>
+              <td>bsc</td>
+              <td>raviyash66@.com</td>
+              <td>9876543210</td>
+            </tr>
+
+            <tr>
+              <td>102</td>
+              <td>Dileep</td>
+              <td>20</td>
+              <td>bsc</td>
+              <td>dileep23@.com</td>
+              <td>9123456780</td>
+            </tr>
+
+            <tr>
+              <td>103</td>
+              <td>charan</td>
+              <td>21</td>
+              <td>cs</td>
+              <td>charan45@.com</td>
+              <td>9988776655</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
